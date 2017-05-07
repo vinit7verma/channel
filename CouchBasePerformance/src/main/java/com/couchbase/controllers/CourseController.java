@@ -10,27 +10,27 @@ import org.springframework.web.bind.annotation.RestController;
 import com.couchbase.dataaccess.couchbase.server.CouchbaseServerDataAccessImpl;
 
 @RestController
-@RequestMapping("/course")
+@RequestMapping("/student")
 public class CourseController
 {
-   @Autowired
-   CouchbaseServerDataAccessImpl couchbaseServerDataAccessImpl;
+	@Autowired
+	CouchbaseServerDataAccessImpl couchbaseServerDataAccessImpl;
 
-   @RequestMapping(method = RequestMethod.POST)
-   public String create(@RequestBody String course) throws Exception
-   {
-      return couchbaseServerDataAccessImpl.save(course);
-   }
+	@RequestMapping(method = RequestMethod.POST)
+	public String create(@RequestBody String course) throws Exception
+	{
+		return couchbaseServerDataAccessImpl.save(course);
+	}
 
-   @RequestMapping(method = RequestMethod.GET, value = "{id}")
-   public String get(@PathVariable String id) throws Exception
-   {
-      return couchbaseServerDataAccessImpl.getFilteredResultsById(id);
-   }
+	@RequestMapping(method = RequestMethod.GET, value = "{id}")
+	public String get(@PathVariable String id) throws Exception
+	{
+		return couchbaseServerDataAccessImpl.getFilteredResultsById(id);
+	}
 
-   @RequestMapping(method = RequestMethod.DELETE, value = "{id}")
-   public void delete(@PathVariable String id) throws Exception
-   {
-      couchbaseServerDataAccessImpl.delete(id);
-   }
+	@RequestMapping(method = RequestMethod.DELETE, value = "{id}")
+	public void delete(@PathVariable String id) throws Exception
+	{
+		couchbaseServerDataAccessImpl.delete(id);
+	}
 }
