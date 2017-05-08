@@ -3,13 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com</groupId>
+	<groupId>com.concept</groupId>
 	<artifactId>java-fundamentals</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>java-fundamentals</name>
-	<description>Demo project for java-fundamentals</description>
+	<description>Demo project for java-spring-fundamentals</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -27,11 +27,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>com.couchbase.client</groupId>
-			<artifactId>java-client</artifactId>
 		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-commons-core -->
