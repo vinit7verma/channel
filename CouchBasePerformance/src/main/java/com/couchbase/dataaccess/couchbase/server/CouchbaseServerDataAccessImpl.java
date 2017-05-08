@@ -7,9 +7,6 @@ import org.springframework.stereotype.Service;
 import com.couchbase.client.java.Bucket;
 import com.couchbase.client.java.document.JsonDocument;
 import com.couchbase.client.java.document.json.JsonObject;
-import com.couchbase.client.java.query.N1qlQuery;
-import com.couchbase.client.java.query.N1qlQueryResult;
-import com.couchbase.client.java.query.N1qlQueryRow;
 import com.couchbase.dataaccess.AbstractDataAccessAPI;
 import com.couchbase.dataaccess.factory.DataAccessFactory.SupporedDatabase;
 
@@ -63,26 +60,27 @@ public class CouchbaseServerDataAccessImpl extends AbstractDataAccessAPI
 	public String getFilteredResultsById(String id) throws Exception
 	{
 		// Query execution by N1QL query
-		long startTime = System.currentTimeMillis();
-		StringBuilder query = new StringBuilder("SELECT * FROM");
-		query.append(" ").append(COUCHBASE_SERVER_BUCKET_NAME).append(" WHERE id = '").append(id).append("'");
-		N1qlQueryResult queryResult = couchbaseServerBucket.query(N1qlQuery.simple(query.toString()));
-		long endTime = System.currentTimeMillis();
-		System.out.println(endTime - startTime);
-		for(N1qlQueryRow queryRow : queryResult)
-		{
-			JsonObject jsonObject = (JsonObject)queryRow.value().get(COUCHBASE_SERVER_BUCKET_NAME);
-			return jsonObject.toString();
-		}
-		return "";
+		/*
+		 * long startTime = System.currentTimeMillis(); StringBuilder query =
+		 * new StringBuilder("SELECT * FROM");
+		 * query.append(" ").append(COUCHBASE_SERVER_BUCKET_NAME).
+		 * append(" WHERE id = '").append(id).append("'"); N1qlQueryResult
+		 * queryResult =
+		 * couchbaseServerBucket.query(N1qlQuery.simple(query.toString())); long
+		 * endTime = System.currentTimeMillis(); System.out.println(endTime -
+		 * startTime); for(N1qlQueryRow queryRow : queryResult) { JsonObject
+		 * jsonObject =
+		 * (JsonObject)queryRow.value().get(COUCHBASE_SERVER_BUCKET_NAME);
+		 * return jsonObject.toString(); } return "";
+		 */
 
 
 		// Query execution by get method
-		/*long startTime = System.currentTimeMillis();
+		long startTime = System.currentTimeMillis();
 		JsonDocument jsonDocument = couchbaseServerBucket.get(id);
 		long endTime = System.currentTimeMillis();
 		System.out.println(endTime - startTime);
-		return jsonDocument.content().toString();*/
+		return jsonDocument.content().toString();
 	}
 
 }
