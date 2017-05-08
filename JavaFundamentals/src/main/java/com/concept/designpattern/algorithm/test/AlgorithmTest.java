@@ -5,7 +5,7 @@ import java.util.Map;
 
 import com.concept.designpattern.algorithm.factory.AlgorithmModernFactory;
 
-public class AlgorithmApplyTest
+public class AlgorithmTest
 {
 
 	static Map<String, AlgorithmModernFactory> typeMap = new HashMap<>();

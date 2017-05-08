@@ -1,7 +1,14 @@
 package com.concept.designpattern.algorithm;
 
-public interface Algorithm
+public interface SpringAlgorithm
 {
+
+	/**
+	 * Method to get the Decryption Algorithm type.
+	 *
+	 * @return String
+	 */
+	String getAlgorithmType();
 	/**
 	 * Method to get the Decryption Algorithm type.
 	 *
