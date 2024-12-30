@@ -11,6 +11,8 @@ spring:
 server:
   port: 9000
 eureka:
+  instance:
+    prefer-ip-address: true
   client:
     registerWithEureka: true
     serviceUrl:
