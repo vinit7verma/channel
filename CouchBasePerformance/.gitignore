@@ -1,0 +1,33 @@
+*.class
+*.tlogs*
+
+# Package files #
+*.jar
+*.war
+*.ear
+
+# exclude jar of gradle wrapper
+!gradle/wrapper/*jar
+
+# virtual machine logs
+hs_err_pid*
+
+# build files
+**/target
+target
+.gradle
+build
+.swagger-*
+mqjms.*
+.project*
+.classpath
+.settings
+/.idea/
+*.iml
+atlassian-ide-plugin.xml
+/target/
+target/*
+.factorypath
+
+#h2
+*.db
