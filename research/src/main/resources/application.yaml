@@ -2,11 +2,10 @@ spring:
   application:
     name: research
   datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/postgres
-    username: postgres
-    password: "Niit@123"
-    initialize: true
+  driverClassName : org.hsqldb.jdbc.JDBCDriver
+  url : jdbc:hsqldb:mem:myDb
+  username : admin
+  password : admin
 
 management:
   endpoints:
