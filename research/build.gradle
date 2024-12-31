@@ -26,6 +26,11 @@ ext {
 
 dependencies {
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+    // https://mvnrepository.com/artifact/io.github.resilience4j/resilience4j-spring-boot2
+    implementation 'io.github.resilience4j:resilience4j-spring-boot2:2.2.0'
+    // https://mvnrepository.com/artifact/io.github.resilience4j/resilience4j-ratelimiter
+    implementation 'io.github.resilience4j:resilience4j-ratelimiter:2.2.0'
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
     implementation 'org.springframework.boot:spring-boot-starter-security'

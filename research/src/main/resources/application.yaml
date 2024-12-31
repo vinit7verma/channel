@@ -2,10 +2,10 @@ spring:
   application:
     name: research
   datasource:
-  driverClassName : org.hsqldb.jdbc.JDBCDriver
-  url : jdbc:hsqldb:mem:myDb
-  username : admin
-  password : admin
+  driverClassName: org.hsqldb.jdbc.JDBCDriver
+  url: jdbc:hsqldb:mem:myDb
+  username: admin
+  password: admin
 
 management:
   endpoints:
@@ -29,3 +29,19 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 server:
   port: 9001
+
+resilience4j:
+  ratelimiter:
+    configs:
+      default:
+        registerHealthIndicator: true
+        limitForPeriod: 1       # Max requests allowed in the time window
+        limitRefreshPeriod: 1s  # Refresh interval
+        timeoutDuration: 0s     # Time to wait for permission
+    instances:
+      userHello:
+        limitForPeriod: 1
+        limitRefreshPeriod: 5s
+        timeoutDuration: 1000ms
+    metrics:
+      enabled: true
