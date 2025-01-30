@@ -3,9 +3,26 @@ spring:
     name: research
   datasource:
   driverClassName: org.hsqldb.jdbc.JDBCDriver
-  url: jdbc:hsqldb:mem:myDb
+  url: jdbc:hsqldb:mem:productDb
   username: admin
-  password: admin
+  password:
+
+jpa:
+  hibernate:
+    ddl-auto: update  # Automatically updates the schema based on entities
+  show-sql: true       # Show SQL queries in the console
+  properties:
+    hibernate:
+      format_sql: true  # Formats SQL queries for better readability
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG              # Logs Hibernate SQL queries
+        type:
+          descriptor:
+            sql: TRACE
 
 management:
   endpoints:

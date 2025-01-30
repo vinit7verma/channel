@@ -1,4 +1,4 @@
-package com.research.controller;
+package com.research.service;
 
 import io.github.resilience4j.ratelimiter.RateLimiter;
 import io.github.resilience4j.ratelimiter.RateLimiterRegistry;

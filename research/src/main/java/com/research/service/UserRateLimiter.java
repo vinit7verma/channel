@@ -1,4 +1,4 @@
-package com.research.controller;
+package com.research.service;
 
 import org.springframework.stereotype.Service;
 
